@@ -270,3 +270,27 @@ body {
     padding: 0.4rem 0.8rem;
   }
 }
+
+.hover-img {
+  position: relative;
+}
+
+.hover-img img {
+  width: 100%;
+  display: block;
+}
+
+.hover-img img:last-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.hover-img:hover img:last-child {
+  opacity: 1;
+}
+
+.hover-img:hover img:first-child {
+  opacity: 0;
+}

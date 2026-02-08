@@ -347,6 +347,20 @@ body {
 
 /* Mobile responsive */
 @media (max-width: 600px) {
+
+  .site-header {
+     padding: 1.5rem 1rem; /* kleineres Padding für Smartphones */
+   }
+
+    .content h2 {
+      font-size: 1.5rem; /* kleinere Überschrift */
+    }
+
+    .content p {
+      font-size: 1rem; /* optional: Text anpassen */
+    }
+  }
+
   .carousel-wrapper {
     width: 90%;
   }

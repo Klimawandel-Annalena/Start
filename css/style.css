@@ -1,32 +1,25 @@
 /* =========================
    Variablen
    ========================= */
-
-
 :root {
-  --wrapper-width: 1800px;  /* Breite der sichtbaren Leiste */
-  --button-width: 400px;   /* Breite der einzelnen Buttons */
-  --button-height: 100px;  /* Höhe der Buttons */
-  --button-margin: 50px;   /* Abstand zwischen den Buttons */
+  --wrapper-width: 1800px;
+  --button-width: 400px;
+  --button-height: 100px;
+  --button-margin: 50px;
 }
-
 
 /* =========================
    Basis-Einstellungen
    ========================= */
-
-
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-
 html {
   min-height: 100%;
-  background-image: url('../images/hintergrund1.jpg'); /* oder jpg */
+  background-image: url('../images/hintergrund1.jpg'); /* GIF oder JPG */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -36,24 +29,21 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
   color: #333;
-
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-
-  background: transparent;
+  background: transparent; /* Hintergrund auf html */
 }
 
 /* =========================
    Header
    ========================= */
-
 .site-header {
   background-color: #9CD7DB;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1.7rem;
   color: #fff;
-  padding: 2.5rem 1rem;
+  padding: 2.5rem 1rem; /* Desktop */
   text-align: center;
 }
 
@@ -63,9 +53,8 @@ body {
 }
 
 /* =========================
-   Content / Sections mit eigener Hintergrundfarbe
+   Content / Sections
    ========================= */
-
 .content {
   position: relative;
   max-width: 800px;
@@ -75,135 +64,40 @@ body {
   min-height: 600px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
   overflow: hidden;
+  background-color: #ffffff;
+  font-family: 'Georgia', serif;
+  color: #3b2f1c;
 }
 
 /* Jede Section eigene Farbe */
-.content section:nth-child(1) {
- background-color: #c495c5; /* Hellgrün */
-}
+.content section:nth-child(1) { background-color: #c495c5; }
+.content section:nth-child(2) { background-color: #a34949; }
+.content section:nth-child(3) { background-color: #f19eaa; }
+.content section:nth-child(4) { background-color: #7b7b85; }
+.content section:nth-child(5) { background-color: #9b6f3e; }
+.content section:nth-child(6) { background-color: #74bd7a; }
+.content section:nth-child(7) { background-color: #929492; }
 
-
-.content section:nth-child(2) {
-   background-color:#a34949; /* Hellgrün */
-}
-
-
-.content section:nth-child(3) {
-  background-color:#f19eaa; /* Hellgrün */
-}
-
-.content section:nth-child(4) {
-  background-color: #7b7b85; /* Hellgrün */
-}
-
-.content section:nth-child(5) {
-  background-color:#9b6f3e; /* Hellgrün */
-}
-
-.content section:nth-child(6) {
-  background-color: #74bd7a; /* Hellgrün */
-}
-
-.content section:nth-child(7) {
-  background-color: #929492; /* Hellgrün */
-}
-
-
-/* Basis Styling für Sections */
+/* Basis Styling Sections */
 .content section {
+  display: none;
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  min-height: 400px;
   color: #333;
-  min-height: 400px; /* optional, damit Sections immer sichtbar bleiben */
-  display: none; /* alles hidden */
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
   transition: opacity 0.6s ease;
 }
 
-/* Aktive Section sichtbar */
 .content section.active {
   display: block;
   position: relative;
   opacity: 1;
 }
 
-
-/* =========================
-   Navigation (Mobile First)
-   ========================= */
-
-.main-nav {
-  background-color: #555;
-}
-
-.main-nav ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column; /* Mobile: untereinander */
-}
-
-.main-nav li {
-  border-top: 1px solid #5e5d5d;
-}
-
-.main-nav a {
-  display: block;
-  padding: 0.75rem 1rem;
-  color: #fff;
-  text-decoration: none;
-}
-
-.main-nav a:hover {
-  background-color: #677;
-}
-
-/* =========================
-   Papier / Pergament
-   ========================= */
-.content {
-  position: relative;
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 2rem;
-  border-radius: 8px;
-  min-height: 600px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2); 
-
-  /* Pergament-Hintergrund 
-  background-image: url('../images/pergament.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;  */ 
-
-  background-color: #ffffff;
-
-  color: #3b2f1c; /* dunkler Schriftton für Pergament */
-  font-family: 'Georgia', serif;
-  overflow: hidden;
-}
-
-/* Sections */
-.content section {
-  opacity: 0;
-  transition: opacity 0.6s ease;
-  display: block; /* immer block, wir regeln Sichtbarkeit über opacity */
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-}
-
-/* Aktive Section sichtbar */
-.content section.active {
-  opacity: 1;
-  position: relative;
-}
-
-/* Überschriften und Text */
 .content h2 {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, serif;
 }
@@ -213,54 +107,29 @@ body {
   line-height: 1.8;
 }
 
-/* Alle Seiten initially hidden */
-.content section {
-  display: none;
+/* =========================
+   Navigation
+   ========================= */
+.main-nav {
+  background-color: #555;
 }
 
-/* Aktive Seite sichtbar */
-.content section.active {
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column; /* Mobile First */
+}
+
+.main-nav li { border-top: 1px solid #5e5d5d; }
+
+.main-nav a {
   display: block;
-}
-
-/* Aktiver Carousel-Button */
-.carousel-item.active {
-  outline: 3px solid #ffcc00;
-  transform: scale(1.05);
-}
-
-/* =========================
-   Footer
-   ========================= */
-
-.site-footer {
-  background-color: #d68661;
+  padding: 0.75rem 1rem;
   color: #fff;
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.8rem;  
-  margin-top: auto;
+  text-decoration: none;
 }
 
-/* =========================
-   Desktop-Ansicht
-   ========================= */
-
-@media (min-width: 768px) {
-  .main-nav ul {
-    flex-direction: row; /* Desktop: nebeneinander */
-    justify-content: center;
-  }
-
-  .main-nav li {
-    border-top: none;
-  }
-
-  .content {
-    max-width: 1400px;
-    margin: 2rem auto;
-  }
-}
+.main-nav a:hover { background-color: #677; }
 
 /* =========================
    Carousel Navigation
@@ -277,7 +146,7 @@ body {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0,0,0,0.5);
   color: #fff;
   border: none;
   width: 40px;
@@ -288,35 +157,24 @@ body {
   transition: opacity 0.3s, background-color 0.3s;
 }
 
-.nav-btn.left {
-  left: 5px;
-}
+.nav-btn.left { left: 5px; }
+.nav-btn.right { right: 5px; }
 
-.nav-btn.right {
-  right: 5px;
-}
-
-.nav-btn:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.nav-btn.hidden {
-  opacity: 0;
-  pointer-events: none;
-}
+.nav-btn:hover { background-color: rgba(0,0,0,0.8); }
+.nav-btn.hidden { opacity: 0; pointer-events: none; }
 
 .carousel-wrapper {
   overflow: hidden;
   width: var(--wrapper-width);
   position: relative;
-  padding-left: 50px; /* Abstand links, damit der erste Button sichtbar eingerückt ist */
+  padding-left: 50px;
 }
 
 .carousel {
   display: flex;
   transition: transform 0.3s ease;
   list-style: none;
-  padding-right: 50px; /* Optional: Abstand rechts */
+  padding-right: 50px;
 }
 
 .carousel-item {
@@ -345,31 +203,17 @@ body {
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-/* Mobile responsive */
-@media (max-width: 600px) {
-  .carousel-wrapper {
-    width: 90%;
-  }
-
-  .carousel-item {
-    flex: 0 0 30%; /* ca. 3 sichtbar */
-    margin-right: 5px;
-  }
-
-  .nav-btn {
-    font-size: 1.2rem;
-    padding: 0.4rem 0.8rem;
-  }
+.carousel-item.active {
+  outline: 3px solid #ffcc00;
+  transform: scale(1.05);
 }
 
-.hover-img {
-  position: relative;
-}
+/* =========================
+   Hover-Bilder
+   ========================= */
+.hover-img { position: relative; }
 
-.hover-img img {
-  width: 100%;
-  display: block;
-}
+.hover-img img { width: 100%; display: block; }
 
 .hover-img img:last-child {
   position: absolute;
@@ -378,12 +222,41 @@ body {
   opacity: 0;
 }
 
-.hover-img:hover img:last-child {
-  opacity: 1;
+.hover-img:hover img:last-child { opacity: 1; }
+.hover-img:hover img:first-child { opacity: 0; }
+
+/* =========================
+   Footer
+   ========================= */
+.site-footer {
+  background-color: #d68661;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.8rem;
+  margin-top: auto; /* immer unten */
 }
 
-.hover-img:hover img:first-child {
-  opacity: 0;
+/* =========================
+   Desktop Styles
+   ========================= */
+@media (min-width: 768px) {
+  .main-nav ul { flex-direction: row; justify-content: center; }
+  .main-nav li { border-top: none; }
+  .content { max-width: 1400px; margin: 2rem auto; padding: 2rem; }
+  .carousel-item { flex: 0 0 var(--button-width); height: var(--button-height); margin-right: var(--button-margin); }
+  .nav-btn { font-size: 1.8rem; width: 40px; height: 60px; }
 }
 
-
+/* =========================
+   Mobile Styles
+   ========================= */
+@media (max-width: 600px) {
+  .site-header { padding: 1.5rem 1rem; }
+  .content { max-width: 90%; margin: 1rem auto; padding: 1rem; }
+  .content h2 { font-size: 1.5rem; }
+  .content p { font-size: 1rem; }
+  .carousel-wrapper { width: 90%; padding-left: 10px; padding-right: 10px; }
+  .carousel-item { flex: 0 0 30%; margin-right: 5px; }
+  .nav-btn { font-size: 1.2rem; width: 30px; height: 50px; }
+}

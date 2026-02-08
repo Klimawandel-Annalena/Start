@@ -145,3 +145,18 @@ carouselItems.forEach((item, index) => {
 // =========================
 carouselItems[0].classList.add('active');
 if(contentSections[0]) contentSections[0].classList.add('active');
+
+document.addEventListener('DOMContentLoaded', () => {
+  const hoverImages = document.querySelectorAll('.hover-img');
+
+  hoverImages.forEach(img => {
+    // Klick / Touch simuliert Hover
+    img.addEventListener('click', () => {
+      img.classList.toggle('active-hover');
+    });
+
+    img.addEventListener('touchstart', () => {
+      img.classList.toggle('active-hover');
+    });
+  });
+});

@@ -33,6 +33,7 @@ body {
   display: flex;
   flex-direction: column;
   background: transparent; /* Hintergrund auf html */
+  overflow-x: hidden; /* verhindert horizontales Scrollen */
 }
 
 /* =========================
@@ -252,11 +253,11 @@ body {
    Mobile Styles
    ========================= */
 @media (max-width: 600px) {
-  .site-header { padding: 1.5rem 1rem; }
-  .content { max-width: 90%; margin: 1rem auto; padding: 1rem; }
+  .site-header { padding: 0.9rem 1rem; }
+  .content { max-width: 100%; margin: 1rem auto; padding: 1rem; }
   .content h2 { font-size: 0.9rem; }
   .content p { font-size: 1rem; }
-  .carousel-wrapper { width: 90%; padding-left: 10px; padding-right: 10px; }
+  .carousel-wrapper { width: 100%; padding-left: 0; padding-right: 0; }
   .carousel-item { flex: 0 0 30%; margin-right: 5px; }
   .nav-btn { font-size: 1.2rem; width: 30px; height: 50px; }
 }

@@ -2,9 +2,13 @@
 // Gerät  erkennen
 // =========================
 const isTouchDevice =
-  'ontouchstart' in window ||
-  navigator.maxTouchPoints > 0;
+  'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
+if (isTouchDevice) {
+  console.log("Touch-Gerät erkannt – JS Carousel deaktiviert");
+} else {
+  // Desktop: Pfeile + Animation wie bisher
+}
 
 
 
@@ -89,6 +93,7 @@ let isDragging = false;
 
 carousel.addEventListener('touchstart', (e) => {
   startX = e.touches[0].clientX;
+  currentMaxShift = getMaxShift();
   isDragging = true;
 });
 
@@ -96,12 +101,14 @@ carousel.addEventListener('touchmove', (e) => {
   if (!isDragging) return;
 
   const moveX = e.touches[0].clientX;
-  const diff = startX - moveX;
+  let diff = startX - moveX;
+
+  // Empfindlichkeit erhöhen
+  diff *= 1; // optional 1.2 für schneller
 
   currentShift += diff;
-
   if (currentShift < 0) currentShift = 0;
-  if (currentShift > maxShift) currentShift = maxShift;
+  if (currentShift > currentMaxShift) currentShift = currentMaxShift;
 
   carousel.style.transform = `translateX(${-currentShift}px)`;
   startX = moveX;
@@ -110,6 +117,12 @@ carousel.addEventListener('touchmove', (e) => {
 carousel.addEventListener('touchend', () => {
   isDragging = false;
 });
+
+function getMaxShift() {
+  const wrapperWidth = document.querySelector('.carousel-wrapper').offsetWidth;
+  const carouselWidth = totalItems * (buttonWidth + buttonMargin);
+  return Math.max(0, carouselWidth - wrapperWidth);
+}
 
 // =========================
 // Pfeile sichtbar / hidden

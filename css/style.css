@@ -15,20 +15,21 @@
    Basis-Einstellungen
    ========================= */
 
-html {
-  min-height: 100%;
-  background-image: url('../images/hintergrund1.jpg'); /* oder jpg */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
 
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+
+html {
+  min-height: 100%;
+  background-image: url('../images/hintergrund1.jpg'); /* oder jpg */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 body {
@@ -48,9 +49,11 @@ body {
    ========================= */
 
 .site-header {
-  background-color: #333;
+  background-color: #9CD7DB;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.7rem;
   color: #fff;
-  padding: 1.5rem 1rem;
+  padding: 2.5rem 1rem;
   text-align: center;
 }
 
@@ -58,6 +61,76 @@ body {
   font-size: 0.9rem;
   opacity: 0.8;
 }
+
+/* =========================
+   Content / Sections mit eigener Hintergrundfarbe
+   ========================= */
+
+.content {
+  position: relative;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 8px;
+  min-height: 600px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+/* Jede Section eigene Farbe */
+.content section:nth-child(1) {
+ background-color: #c495c5; /* Hellgrün */
+}
+
+
+.content section:nth-child(2) {
+   background-color:#a34949; /* Hellgrün */
+}
+
+
+.content section:nth-child(3) {
+  background-color:#f19eaa; /* Hellgrün */
+}
+
+.content section:nth-child(4) {
+  background-color: #7b7b85; /* Hellgrün */
+}
+
+.content section:nth-child(5) {
+  background-color:#9b6f3e; /* Hellgrün */
+}
+
+.content section:nth-child(6) {
+  background-color: #74bd7a; /* Hellgrün */
+}
+
+.content section:nth-child(7) {
+  background-color: #929492; /* Hellgrün */
+}
+
+
+/* Basis Styling für Sections */
+.content section {
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  color: #333;
+  min-height: 400px; /* optional, damit Sections immer sichtbar bleiben */
+  display: none; /* alles hidden */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: opacity 0.6s ease;
+}
+
+/* Aktive Section sichtbar */
+.content section.active {
+  display: block;
+  position: relative;
+  opacity: 1;
+}
+
 
 /* =========================
    Navigation (Mobile First)
@@ -98,13 +171,15 @@ body {
   padding: 2rem;
   border-radius: 8px;
   min-height: 600px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2); 
 
-  /* Pergament-Hintergrund */
-  background-image: url('../images/pergament.jpg'); /* Beispiel Pergament */
+  /* Pergament-Hintergrund 
+  background-image: url('../images/pergament.jpg');
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat;  */ 
+
+  background-color: #ffffff;
 
   color: #3b2f1c; /* dunkler Schriftton für Pergament */
   font-family: 'Georgia', serif;
@@ -159,7 +234,7 @@ body {
    ========================= */
 
 .site-footer {
-  background-color: #26d117;
+  background-color: #d68661;
   color: #fff;
   text-align: center;
   padding: 1rem;
@@ -192,7 +267,7 @@ body {
    ========================= */
 .carousel-nav {
   position: relative;
-  background-color: #222;
+  background-color: #d68661;
   padding: 1rem 0;
   display: flex;
   justify-content: center;
@@ -310,3 +385,5 @@ body {
 .hover-img:hover img:first-child {
   opacity: 0;
 }
+
+

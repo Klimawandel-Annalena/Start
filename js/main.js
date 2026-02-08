@@ -1,4 +1,14 @@
 // =========================
+// Gerät  erkennen
+// =========================
+const isTouchDevice =
+  'ontouchstart' in window ||
+  navigator.maxTouchPoints > 0;
+
+
+
+
+// =========================
 // Carousel Setup
 // =========================
 const carousel = document.querySelector('.carousel');
@@ -62,11 +72,15 @@ function stopScroll() {
 }
 
 // Pfeil-Events
-leftBtn.addEventListener('mouseover', () => startScroll(-1));
-leftBtn.addEventListener('mouseout', stopScroll);
-rightBtn.addEventListener('mouseover', () => startScroll(1));
-rightBtn.addEventListener('mouseout', stopScroll);
-
+if (!isTouchDevice) {
+  leftBtn.addEventListener('mouseover', () => startScroll(-1));
+  leftBtn.addEventListener('mouseout', stopScroll);
+  rightBtn.addEventListener('mouseover', () => startScroll(1));
+  rightBtn.addEventListener('mouseout', stopScroll);
+} else {
+  leftBtn.style.display = 'none';
+  rightBtn.style.display = 'none';
+}
 // =========================
 // Touch / Swipe Mobile
 // =========================
@@ -80,20 +94,17 @@ carousel.addEventListener('touchstart', (e) => {
 
 carousel.addEventListener('touchmove', (e) => {
   if (!isDragging) return;
+
   const moveX = e.touches[0].clientX;
   const diff = startX - moveX;
 
-  if (diff > 30 && currentShift < maxShift) { 
-    currentShift += 5;
-    if (currentShift > maxShift) currentShift = maxShift;
-    carousel.style.transform = `translateX(${-currentShift}px)`;
-    startX = moveX;
-  } else if (diff < -30 && currentShift > 0) { 
-    currentShift -= 5;
-    if (currentShift < 0) currentShift = 0;
-    carousel.style.transform = `translateX(${-currentShift}px)`;
-    startX = moveX;
-  }
+  currentShift += diff;
+
+  if (currentShift < 0) currentShift = 0;
+  if (currentShift > maxShift) currentShift = maxShift;
+
+  carousel.style.transform = `translateX(${-currentShift}px)`;
+  startX = moveX;
 });
 
 carousel.addEventListener('touchend', () => {

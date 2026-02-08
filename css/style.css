@@ -15,6 +15,16 @@
    Basis-Einstellungen
    ========================= */
 
+html {
+  min-height: 100%;
+  background-image: url('../images/hintergrund1.jpg'); /* oder jpg */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+
 * {
   margin: 0;
   padding: 0;
@@ -24,8 +34,13 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
-  background-color: #f4f4f4;
   color: #333;
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  background: transparent;
 }
 
 /* =========================
@@ -59,7 +74,7 @@ body {
 }
 
 .main-nav li {
-  border-top: 1px solid #666;
+  border-top: 1px solid #5e5d5d;
 }
 
 .main-nav a {
@@ -115,7 +130,7 @@ body {
 
 /* Überschriften und Text */
 .content h2 {
-  font-family: 'Georgia', serif;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, serif;
 }
 
 .content p {
@@ -144,11 +159,12 @@ body {
    ========================= */
 
 .site-footer {
-  background-color: #333;
+  background-color: #26d117;
   color: #fff;
   text-align: center;
   padding: 1rem;
-  font-size: 0.8rem;
+  font-size: 0.8rem;  
+  margin-top: auto;
 }
 
 /* =========================
@@ -166,7 +182,7 @@ body {
   }
 
   .content {
-    max-width: 900px;
+    max-width: 1400px;
     margin: 2rem auto;
   }
 }

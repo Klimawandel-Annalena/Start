@@ -83,22 +83,25 @@ body {
 
 /* Basis Styling Sections */
 .content section {
-  display: none;
   position: absolute;
-  top: 0; left: 0;
+  top: 0; 
+  left: 0;
   width: 100%;
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
   min-height: 400px;
   color: #333;
-  transition: opacity 0.6s ease;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
 }
 
 .content section.active {
-  display: block;
-  position: relative;
   opacity: 1;
+  pointer-events: auto;
+  position: relative;
 }
 
 .content h2 {

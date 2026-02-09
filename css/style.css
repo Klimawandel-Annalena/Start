@@ -174,9 +174,6 @@ body {
   width: var(--wrapper-width);
   position: relative;
   padding-left: 50px;
-    overflow-x: auto;
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
   padding-right: 20px;   /* gibt Platz für das letzte Item */
 }
 
@@ -266,7 +263,7 @@ body {
   .content {max-width: 100%; margin: 1rem auto; padding: 1rem; }
   .content h2 { font-size: 0.9rem; }
   .content p { font-size: 1rem; }
-  .carousel-wrapper { width: 100%; max-width: 100%; padding-left: 0; padding-right: 0;overflow-x: auto; }
+  .carousel-wrapper { width: 100%; max-width: 100%; padding-left: 0; padding-right: 0;overflow-x: auto; overflow-y: hidden;}
   .carousel-item { flex: 0 0 80%; margin-right: 10px; }
   .carousel { flex-wrap: nowrap;padding-right: 0;}
   .nav-btn { font-size: 1.2rem; width: 30px; height: 50px; display: none; }

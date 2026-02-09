@@ -149,17 +149,14 @@ carouselItems.forEach((item, index) => {
     carouselItems.forEach(i => i.classList.remove('active'));
     item.classList.add('active');
 
-    // Alle Inhalte langsam ausblenden
-    contentSections.forEach(section => {
-      section.classList.remove('active');
+    // Sections sanft wechseln
+    contentSections.forEach((section, sIndex) => {
+      if (sIndex === index) {
+        section.classList.add('active'); // fade-in
+      } else {
+        section.classList.remove('active'); // fade-out
+      }
     });
-
-    // Aktive Section einblenden mit Fade
-    if(contentSections[index]) {
-      setTimeout(() => {
-        contentSections[index].classList.add('active');
-      }, 50); // kleines Delay, damit transition greift
-    }
   });
 });
 

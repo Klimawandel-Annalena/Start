@@ -62,7 +62,7 @@ body {
   margin: 2rem auto;
   padding: 2rem;
   border-radius: 8px;
-  min-height: 600px;
+  min-height: 200px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
   overflow: hidden;
   background-color: #ffffff;
@@ -78,6 +78,8 @@ body {
 .content section:nth-child(5) { background-color: #9b6f3e; }
 .content section:nth-child(6) { background-color: #74bd7a; }
 .content section:nth-child(7) { background-color: #929492; }
+.content section:nth-child(8) { background-color: #d68661; }
+.content section:nth-child(9) { background-color: #d68661; }
 
 /* Basis Styling Sections */
 .content section {
@@ -259,6 +261,70 @@ body {
   .content p { font-size: 1rem; }
   .carousel-wrapper { width: 100%; max-width: 100%; padding-left: 0; padding-right: 0;overflow-x: auto; }
   .carousel-item { flex: 0 0 80%; margin-right: 10px; }
-  .carousel{flex-wrap: nowrap;padding-right: 0;}
+  .carousel { flex-wrap: nowrap;padding-right: 0;}
   .nav-btn { font-size: 1.2rem; width: 30px; height: 50px; display: none; }
+  .content section:nth-child(2).section-row { flex-direction: column; align-items: center; text-align: center; }
+  .content section:nth-child(2) .section-image img { max-width: 100%; }
+}
+
+/* =========================
+   Section 2: Bild links, Text rechts, Text unten
+   ========================= */
+.content section:nth-child(2) .section-row {
+  display: flex;
+  align-items: flex-start; /* Bild und Text oben ausrichten */
+  gap: 20px;               /* Abstand zwischen Bild und Text */
+ 
+}
+
+.content section:nth-child(2) .section-image img {
+  max-width: 400px;        /* Bildgröße anpassen */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.content section:nth-child(2) .section-text {
+  flex: 1;                 /* Text nimmt restlichen Platz ein */
+  font-family: 'Georgia', serif;
+  font-size: 1rem;
+  color: #000; /* optional für Kontrast auf rotem Hintergrund */
+}
+
+.content section:nth-child(2) .section-bottom-text {
+  font-family: 'Georgia', serif;
+  font-size: 1rem;
+  margin-top: 0rem;
+  color: #000; /* optional für Kontrast */
+}
+
+/* =========================
+   Section 3: Bild links, Text rechts, Text unten
+   ========================= */
+.content section:nth-child(3) .section-row {
+  display: flex;
+  align-items: flex-start; /* Bild und Text oben ausrichten */
+  gap: 20px;               /* Abstand zwischen Bild und Text */
+ 
+}
+
+.content section:nth-child(3) .section-image img {
+  max-width: 450px;        /* Bildgröße anpassen */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.content section:nth-child(3) .section-text {
+  flex: 1;                 /* Text nimmt restlichen Platz ein */
+  font-family: 'Georgia', serif;
+  font-size: 1rem;
+  color: #000; /* optional für Kontrast auf rotem Hintergrund */
+}
+
+.content section:nth-child(3) .section-bottom-text {
+  font-family: 'Georgia', serif;
+  font-size: 1rem;
+  margin-top: 0rem;
+  color: #000; /* optional für Kontrast */
 }

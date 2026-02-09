@@ -279,8 +279,10 @@ body {
   /* Bilder kleiner machen */
   .content section:nth-child(2) .section-image img,
   .content section:nth-child(3) .section-image img {
-    max-width: 90%; /* oder 300px */
-    height: auto;
+    max-width: 300px; /* neue maximale Breite */
+    width: 100%;      /* passt sich Container an */
+    height: auto;     /* proportional skalieren */
+    margin-bottom: 1rem; /* Abstand zum Text */
   }
 
   /* Bottom Text enger an die Section */

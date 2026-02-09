@@ -171,10 +171,11 @@ body {
 
 .carousel-wrapper {
   overflow: hidden;
-  width: var(--wrapper-width);
+  width:100%;
+  max-width: var(--wrapper-width);
   position: relative;
   padding-left: 50px;
-  padding-right: 20px;   /* gibt Platz für das letzte Item */
+  padding-right: 50px;   /* gibt Platz für das letzte Item */
 }
 
 .carousel {
@@ -267,8 +268,26 @@ body {
   .carousel-item { flex: 0 0 80%; margin-right: 10px; }
   .carousel { flex-wrap: nowrap;padding-right: 0;}
   .nav-btn { font-size: 1.2rem; width: 30px; height: 50px; display: none; }
-  .content section:nth-child(2).section-row { flex-direction: column; align-items: center; text-align: center; }
-  .content section:nth-child(2) .section-image img { max-width: 100%; }
+ /* Section 2 & 3: Bild über Text */
+  .content section:nth-child(2) .section-row,
+  .content section:nth-child(3) .section-row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Bilder kleiner machen */
+  .content section:nth-child(2) .section-image img,
+  .content section:nth-child(3) .section-image img {
+    max-width: 90%; /* oder 300px */
+    height: auto;
+  }
+
+  /* Bottom Text enger an die Section */
+  .content section:nth-child(2) .section-bottom-text,
+  .content section:nth-child(3) .section-bottom-text {
+    margin-top: 1rem; /* vorher 0, etwas Abstand reicht */
+  }
 }
 
 

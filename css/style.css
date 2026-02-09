@@ -245,7 +245,15 @@ body {
   margin-top: auto; /* immer unten */
 }
 
-
+@media (max-width: 1300px) {
+  .content section {
+    position: relative; /* nicht mehr absolut */
+    top: auto;
+    left: auto;
+    width: 100%;
+    min-height: auto;   /* passt sich dem Inhalt an */
+  }
+}
 
 @media (max-width: 1024px) { /* MacBook Air / iPad */
   .content section {

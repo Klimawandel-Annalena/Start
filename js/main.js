@@ -17,6 +17,25 @@ const leftBtn = document.querySelector('.nav-btn.left');
 const rightBtn = document.querySelector('.nav-btn.right');
 const contentSections = document.querySelectorAll('.content section');
 
+
+// CSS-Variablen auslesen
+const rootStyles = getComputedStyle(document.documentElement);
+const buttonWidth = parseInt(rootStyles.getPropertyValue('--button-width'));
+const buttonMargin = parseInt(rootStyles.getPropertyValue('--button-margin'));
+const totalItems = carouselItems.length;
+
+// Dynamisch sichtbare Items ermitteln
+const wrapperWidth = carousel.parentElement.offsetWidth;
+const visibleItems = Math.floor(wrapperWidth / (buttonWidth + buttonMargin));
+
+// Maximaler Scroll
+const maxShift = Math.max(0, (totalItems - visibleItems) * (buttonWidth + buttonMargin));
+
+let currentShift = 0;
+let scrollDirection = 0;
+let speed = 10;
+let animating = false;
+
 // Initial: Section 8 anzeigen
 window.addEventListener('DOMContentLoaded', () => {
   // Alle Sections ausblenden
@@ -28,21 +47,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 
-
-// CSS-Variablen auslesen
-const rootStyles = getComputedStyle(document.documentElement);
-const buttonWidth = parseInt(rootStyles.getPropertyValue('--button-width'));
-const buttonMargin = parseInt(rootStyles.getPropertyValue('--button-margin'));
-const visibleItems = 3; // Anzahl sichtbar
-const totalItems = carouselItems.length;
-
-// Maximaler Scroll
-const maxShift = (totalItems - visibleItems) * (buttonWidth + buttonMargin);
-
-let currentShift = 0;
-let scrollDirection = 0;
-let speed = 10;
-let animating = false;
 
 // =========================
 // Initial Scroll / Einrückung

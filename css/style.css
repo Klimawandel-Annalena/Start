@@ -267,6 +267,20 @@ body {
   .content section:nth-child(2) .section-image img { max-width: 100%; }
 }
 
+
+@media (max-width: 1024px) {
+  .carousel-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .carousel {
+    padding-right: 0;
+  }
+}
+
 /* =========================
    Section 2: Bild links, Text rechts, Text unten
    ========================= */

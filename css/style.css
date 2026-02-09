@@ -245,6 +245,16 @@ body {
   margin-top: auto; /* immer unten */
 }
 
+
+
+@media (max-width: 1024px) { /* MacBook Air / iPad */
+  .content section {
+    position: relative; /* keine absolute Position auf kleinen Bildschirmen */
+    min-height: auto;   /* Höhe passt sich dem Inhalt an */
+  }}
+
+
+
 /* =========================
    Desktop Styles
    ========================= */
